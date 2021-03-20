@@ -1,0 +1,30 @@
+#content {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+img {
+    margin: auto;
+}
+
+#egg {
+    width: 300px;
+    height: 300px;
+    margin-top: 100px;
+}
+
+#bird {
+    width: 400px;
+    height: 300px;
+}
+
+.nodisp {
+    display: none;
+}
+
+.disp {
+    display: block;
+}
