@@ -1,3 +1,10 @@
+let btn = document.getElementById('btn');
+btn.addEventListener('click', saiyomikomi);
+
+let cb = document.getElementById('cb');
+
+
+
 let egg = document.getElementById('egg');
 let bird = document.getElementById('bird');
 let rare = document.getElementById('rare');
@@ -13,14 +20,21 @@ function Hyouzi() {
   
   let random = Math.floor( Math.random() * 4 );
   console.log(random);
+
+  if (cb.checked) random = 3;
   
-  egg.className = "nodisp";
-
-  bird.src = GetBird(random);
-  bird.className = "disp";
-
-  rare.src = GetRare(random);
-  rare.className = "disp";
+  if (random === 3) {
+    egg.src = "img/smoke.png";
+    startTimer();
+  }else{
+    egg.className = "nodisp";
+  
+    bird.src = GetBird(random);
+    bird.className = "disp";
+  
+    rare.src = GetRare(random);
+    rare.className = "disp";
+  }
 
 
   // document.getElementById('egg').src="img/" + images[random] + ".png";
@@ -50,4 +64,26 @@ function GetRare(r) {
   ];
 
   return rares[r];
+}
+
+
+// タイマー関数
+function startTimer() {
+  let ssr = 3;
+
+  timerId = setTimeout( function() {
+     // ～何かの処理～
+    //  egg.src = "img/smoke.png";
+     egg.className = "nodisp";
+       
+     bird.src = GetBird(ssr);
+     bird.className = "disp";
+     
+     rare.src = GetRare(ssr);
+     rare.className = "disp";
+  } , 1500 );
+}
+
+function saiyomikomi() {
+  window.location.reload();
 }

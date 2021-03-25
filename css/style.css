@@ -28,3 +28,8 @@ img {
 .disp {
     display: block;
 }
+
+
+#btn {
+    margin-top: 10px;
+}
